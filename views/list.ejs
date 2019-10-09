@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To Do List</title>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-    <h1> <%= kindOfDay %> </h1>
-
-    <ul>
-        <% for(var i = 0; i < newListItems.length; i++){ %>
-            <li> <%= newListItems[i] %> </li>
-            <% }; %>
-    </ul>
-
-    <form action="/" method="POST">
-
-        <input type="text" name="newItem">
+            <h1 id="heading" class="box"> <%= kindOfDay %> </h1>
+    <div class="box">
+            <ul>
+                <% for(var i = 0; i < newListItems.length; i++){ %>
+                    <li class="item"><input type="checkbox"><p><%= newListItems[i] %></p></li>
+                    <% }; %>
+            </ul>
+            <form action="/" method="POST">
         
-        <button type="submit" name="button">Add</button>
-    </form>
+                <input type="text" name="newItem" placeholder="New Item">
+                
+                <button type="submit" name="button">+</button>
+            </form>
+    </div>
+
+    <footer>
+        © Fabian Suffield 2019
+    </footer>
 
 
 </body>
