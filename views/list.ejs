@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,24 @@
     <title>To Do List</title>
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-            <h1 id="heading" class="box"> <%= kindOfDay %> </h1>
+    <div class="box" id="heading">
+        <h1> <%= kindOfDay %> </h1>
+    </div>
+
     <div class="box">
-            <ul>
-                <% for(var i = 0; i < newListItems.length; i++){ %>
-                    <li class="item"><input type="checkbox"><p><%= newListItems[i] %></p></li>
-                    <% }; %>
-            </ul>
-            <form action="/" method="POST">
-        
-                <input type="text" name="newItem" placeholder="New Item">
-                
-                <button type="submit" name="button">+</button>
-            </form>
+        <% for(var i = 0; i < newListItems.length; i++){ %>
+        <div class="item">
+            <input type="checkbox">
+            <p><%= newListItems[i] %></p>
+        </div>
+        <% } %>
+
+        <form class="item" action="/" method="POST">
+            <input type="text" name="newItem" placeholder="New Item">
+            <button type="submit" name="button">+</button>
+        </form>
     </div>
 
     <footer>
@@ -29,5 +34,5 @@
 
 
 </body>
-</html>
 
+</html>
